@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Title
-  - 
+  - Ground
   - 
   - 
   - 
@@ -59,4 +59,7 @@ TagManager:
     locked: 0
   - name: Collectible
     uniqueID: 16044677
+    locked: 0
+  - name: Player
+    uniqueID: 3135931061
     locked: 0
