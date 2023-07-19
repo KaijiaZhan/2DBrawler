@@ -41,9 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void Flip() {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) {
             isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            transform.Rotate(0, 180, 0);
         }
     }
 }
