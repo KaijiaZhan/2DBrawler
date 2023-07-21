@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 578548275}
   - component: {fileID: 578548274}
   - component: {fileID: 578548276}
+  - component: {fileID: 578548277}
   m_Layer: 0
   m_Name: MainMenuMusic
   m_TagString: MainMenuMusic
@@ -635,9 +636,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 578548273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb53f41a655b4f3449861ba2ea2ca941, type: 3}
+  m_Script: {fileID: 11500000, guid: c537aa572a525ae46a1c088a19b31a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartScene: 0
+--- !u!114 &578548277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578548273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4bc911eea218ae4387acabd418b16fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 0}
 --- !u!1 &597040351
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +865,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 659229993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8491deb6b9687eb4fa04589c61f45a98, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fd31d258226e0944856655ad0f01a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &673663741
@@ -1084,7 +1099,7 @@ GameObject:
   - component: {fileID: 777419581}
   - component: {fileID: 777419580}
   - component: {fileID: 777419579}
-  - component: {fileID: 777419578}
+  - component: {fileID: 777419582}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1113,18 +1128,6 @@ RectTransform:
   m_AnchoredPosition: {x: -323, y: -155.9671}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &777419578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777419576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c8a3474c670184da8151ecc50bac52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &777419579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,7 +1172,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777419578}
+      - m_Target: {fileID: 777419582}
         m_TargetAssemblyTypeName: PlayScript, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -1219,6 +1222,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777419576}
   m_CullTransparentMesh: 1
+--- !u!114 &777419582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777419576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75d660e4eddd7e44af705a209c330a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStartScene: 0
 --- !u!1 &821594804
 GameObject:
   m_ObjectHideFlags: 0

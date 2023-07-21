@@ -11,10 +11,12 @@ public class PlayScript : MonoBehaviour
     public int gameStartScene;
     public void StartGame()
     {
+        gameStartScene = 1;
         SceneManager.LoadScene(gameStartScene);
     }
 
     public void OpenOptions() {
+        gameStartScene = 2;
         SceneManager.LoadScene(gameStartScene);
     }
     void Update()
