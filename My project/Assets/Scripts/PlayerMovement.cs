@@ -15,7 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    private void Start() {
+    private enum MovementState {idle, running, jumping, falling}
+    
+
+    private void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -25,35 +29,51 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && isGrounded()) {
+        if (Input.GetButtonDown("Jump") && isGrounded()) 
+        {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
+        MovementState state;
         if (horizontal > 0f)
         {
-            anim.SetBool("Running", true);
+            state = MovementState.running;
         }
         else if (horizontal < 0f) 
         {
-            anim.SetBool("Running", true);
+            
+            state = MovementState.running;
         }
         else
         {
-            anim.SetBool("Running", false);
+            state = MovementState.idle;
         }
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -.1f)
+        {
+            state = MovementState.falling;
+        }
+        anim.SetInteger("state", (int)state);
         Flip();
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
-    private bool isGrounded() {
+    private bool isGrounded() 
+    {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void Flip() {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) {
+    private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        {
             isFacingRight = !isFacingRight;
             transform.Rotate(0, 180, 0);
         }
