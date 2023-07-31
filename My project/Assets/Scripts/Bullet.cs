@@ -14,9 +14,14 @@ public class NewBehaviourScript : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D collision) {
       Dummy dummy = collision.GetComponent<Dummy>();
-
+      Walls walls = collision.GetComponent<Walls>();
       if (dummy != null) {
          dummy.TakeDamage(20);
+         Destroy(gameObject);
+      }
+
+      else if (walls != null) {
+         walls.collide();
          Destroy(gameObject);
       }
 

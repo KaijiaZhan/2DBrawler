@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 248480507}
   - component: {fileID: 248480506}
   - component: {fileID: 248480505}
+  - component: {fileID: 248480508}
   m_Layer: 7
   m_Name: Terrain
   m_TagString: Untagged
@@ -1588,6 +1589,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &248480508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248480501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cab28ba5051054ebff4d212c4fe55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &275893861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,7 +2000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329922034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.123, y: -0.089, z: 0.009111449}
+  m_LocalPosition: {x: 0.3, y: 0.31, z: 0.009111449}
   m_LocalScale: {x: 0.25653514, y: 0.25653514, z: 0.25653514}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2336,6 +2349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sprite-0002-Recovered
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: f03d6ebdc17d62f4a876e557ef7ef5bc, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f03d6ebdc17d62f4a876e557ef7ef5bc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2589,7 +2606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937098292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.038, y: -0.135, z: -0.022676624}
+  m_LocalPosition: {x: -0.051, y: 0.026, z: -0.022676624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
