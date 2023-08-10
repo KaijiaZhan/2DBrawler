@@ -11,7 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
 
     public HealthBarScripti healthBar;
-
+    float timer = 0f;
+    float delay = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
+
     }
 
     void TakeDamage(int damage)
@@ -33,14 +31,16 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0) {
+                Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Trap")) {
-            currentHealth -= 5;
-            if (currentHealth <= 0) {
-                Destroy(gameObject);
-            }
+        if (collision.gameObject.CompareTag("Trap") && Time.time>=timer) {
+            TakeDamage(20);
+            timer = Time.time + delay;
         }
     }
 }
